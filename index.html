@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد الريس - متجر الزهور والنعناع والصبار</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>محمد الريس</h1>
+                <span class="tagline">متجر الزهور والنعناع والصبار</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#about">عن المتجر</a></li>
+                <li><a href="#contact">التواصل</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>مرحباً بك في متجر محمد الريس</h2>
+            <p>أجمل الزهور الطازجة والنعناع الأخضر والصبار الناد</p>
+            <p class="subtitle">توصيل لجميع أنحاء مصر</p>
+            <button class="cta-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">اس��كشف المنتجات</button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">منتجاتنا الطازجة اليوم</h2>
+            <div class="price-date">
+                <p><i class="fas fa-calendar"></i> أسعار اليوم: <span id="currentDate"></span></p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Roses -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);">
+                        <i class="fas fa-flower"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>الوروד الحمراء الفاخرة</h3>
+                        <p class="description">ورود حمراء طازجة جداً، مثالية للهدايا والمناسبات</p>
+                        <div class="price-box">
+                            <span class="price">150 ج.م</span>
+                            <span class="unit">للباقة</span>
+                        </div>
+                        <button class="add-btn" onclick="orderProduct('الوروד الحمراء الفاخرة', 150)">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <!-- White Roses -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fff5f7 0%, #ffe8ed 100%);">
+                        <i class="fas fa-flower"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>الوروד البيضاء النقية</h3>
+                        <p class="description">وروד بيضاء نقية وجميلة، للعرسان والمناسبات الراقية</p>
+                        <div class="price-box">
+                            <span class="price">180 ج.م</span>
+                            <span class="unit">للباقة</span>
+                        </div>
+                        <button class="add-btn" onclick="orderProduct('الوروד البيضاء النقية', 180)">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <!-- Yellow Roses -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);">
+                        <i class="fas fa-flower"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>الورود الصفراء المرحة</h3>
+                        <p class="description">ورود صفراء زاهية تنشر البهجة والسعادة</p>
+                        <div class="price-box">
+                            <span class="price">140 ج.م</span>
+                            <span class="unit">للباقة</span>
+                        </div>
+                        <button class="add-btn" onclick="orderProduct('الوروד الصفراء المرحة', 140)">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <!-- Mint -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #76d7c4 0%, #a4d8d6 100%);">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>النعناع الأخضر الطاز</h3>
+                        <p class="description">نعناع أخضر طاز جداً، للشاي والسلطات والمشروبات</p>
+                        <div class="price-box">
+                            <span class="price">30 ج.م</span>
+                            <span class="unit">الكيس</span>
+                        </div>
+                        <button class="add-btn" onclick="orderProduct('النعناع الأخضر الطاز', 30)">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <!-- Cactus -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #52b788 0%, #74c69d 100%);">
+                        <i class="fas fa-clover"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>الصبار الناد والممي</h3>
+                        <p class="description">صبار ناد وجميل، يضيف جمالاً طبيعياً لمنزلك</p>
+                        <div class="price-box">
+                            <span class="price">120 ج.م</span>
+                            <span class="unit">النبتة</span>
+                        </div>
+                        <button class="add-btn" onclick="orderProduct('الصبار الناد والممي', 120)">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <!-- Mixed Bouquet -->
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #ff6b9d 0%, #ffd700 50%, #76d7c4 100%);">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>باقة الزهور الممية المختلطة</h3>
+                        <p class="description">مزيج رائع من الزهور الملونة والنعناع الأخضر</p>
+                        <div class="price-box">
+                            <span class="price">250 ج.م</span>
+                            <span class="unit">الباقة الكبيرة</span>
+                        </div>
+                        <button class="add-btn" onclick="orderProduct('باقة الزهور الممية المختلطة', 250)">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">عن متجر محمد الريس</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>متجرك الموثوق للزهور الطازجة والنعناع والصبار</h3>
+                    <p>نحن نوفر أجمل وأطاز الزهور والنعناع والصبار في مصر. كل منتجاتنا مختارة بعناية لضمان جودتها وطزاجتها.</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check-circle"></i> منتجات طازجة يومية</li>
+                        <li><i class="fas fa-check-circle"></i> توصيل لجميع أنحاء مصر</li>
+                        <li><i class="fas fa-check-circle"></i> أسعار منافسة وعادلة</li>
+                        <li><i class="fas fa-check-circle"></i> خدمة عملاء ممتازة</li>
+                        <li><i class="fas fa-check-circle"></i> ضمان رضا العميل</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="about-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>الهاتف</h3>
+                    <p><a href="tel:01283340332">01283340332</a></p>
+                    <p class="contact-subtitle">اتصل بنا مباشرة للطلب أو الاستفسار</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-location-dot"></i>
+                    <h3>الموقع</h3>
+                    <p>ملوي - المنيا</p>
+                    <p class="contact-subtitle">شارع الجمهورية الرئيسي</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>التوصيل</h3>
+                    <p>لجميع أنحاء مصر</p>
+                    <p class="contact-subtitle">توصيل سريع وآمن</p>
+                </div>
+            </div>
+
+            <!-- WhatsApp Button -->
+            <div class="whatsapp-section">
+                <a href="https://wa.me/201283340332" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل معنا عبر الواتس
+                </a>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3421.6180405570916!2d30.746719!3d28.291748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145850b8b5555555%3A0x5555555555555555!2s%D9%85%D9%84%D9%88%D9%8A%2C%20%D8%A7%D9%84%D9%85%D9%86%D9%8A%D8%A7!5e0!3m2!1sar!2seg!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 متجر محمد الريس. جميع الحقوق محفوظة.</p>
+            <p>متخصص في بيع الزهور الطازجة والنعناع والصبار</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
